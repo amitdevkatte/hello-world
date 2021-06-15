@@ -1,0 +1,35 @@
+def add_record(data_table,entity_dict):
+    entity_id=entity_dict['uid']
+    data_table={entity_id:entity_dict}
+    return data_table
+
+def search_record(data_table,entity_id):
+    for key in data_table:
+        if entity_id==key:
+            return data_table[entity_id]
+        return None
+
+def update_record(data_table,entity_id,key,value):
+    for i in data_table:
+        if i==entity_id:
+            data_table[entity_id][key]=value
+            return data_table      
+        return data_table
+def delete_record(data_table,entity_id):
+    if enity_id in data_table.keys():
+        data_table.pop(data_table[enity_id])
+    return data_table
+    
+'''
+data_table=dict()
+entity_dict={'uid':101,'emp_name':'Hari','emp_sal':10000}
+entity_id=101
+data_table=add_record(data_table,entity_dict)
+search_record(data_table,entity_id)
+
+entity_id=101
+key='emp_name'
+value='Amit'
+data_table=update_record(data_table,entity_id,key,value)
+print(data_table)
+'''
